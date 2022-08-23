@@ -11,7 +11,7 @@ export  function Login() {
   const [password, setPsw] = useState('') ;  
   const navigate = useNavigate();
 
-  const register = () => {
+  const login = () => {
     if(email!=='' && password!=='')
    { axios.post("http://localhost:5000/api/v1/users", {
       email: email,
@@ -33,9 +33,9 @@ export  function Login() {
   };
 
   return (  
-    <div className="App">
-        <h1 className="text">Login</h1>    
+    <div className="App">       
         <div className="form">
+        <h1 className="text">Login</h1>  
             <input type="email" className="email" minLength={8} required placeholder="Email" 
              onFocus={(e) => 
               e.target.placeholder=""}
@@ -58,7 +58,7 @@ export  function Login() {
             ></input>
             <br></br>
             <br></br>
-            <button className="button" onClick={register}>Login</button>
+            <button className="button" onClick={login}>Login</button>
             <ToastContainer />
         </div>
     </div>
