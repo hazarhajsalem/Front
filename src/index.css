@@ -1,3 +1,13 @@
+:root{
+  --primary-bg:#242526;
+  --secondary-bg:#fff;
+  --primary-text-color:#555;
+  --secondary-text-color:#cecece;
+  --border-radius:8px;
+  --speed:500ms;
+}
+
+
 body {
   background-color: whitesmoke;
   margin: 0;
@@ -8,6 +18,10 @@ code {
     monospace;
 }
 .form{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding:50px;
     background-color:whitesmoke;
     border: 1px solid lightgray;
@@ -15,25 +29,23 @@ code {
     box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
     -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-    font-family:'Courier New', Courier, monospace;
     font-weight: bold;
-    color:darkgrey;
     text-align:center;
 }
-.App{
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- 
+.container{
+  background-color: rgb(231, 231, 231);
+  height: 50px;
+  box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  padding: 0 1rem;
+ display: flex;
+ justify-content: flex-end;
 }
-.button{
+button{
   
   background-color:rgb(255, 0, 43);
   color:whitesmoke;
   border: 0ch;
   border-radius: 9px;
-  width: 100px;
   height: 30px;
 }
 button:focus{
@@ -47,11 +59,150 @@ button:focus{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.input
-{
-  border: 1px solid lightgray;
-  border-radius: 2px;
+
+ul{
+  list-style: none;
+}
+
+text{
+  text-decoration: none;
+}
+
+.trigger img{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.dropdown-menu{
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 150px ;
+}
+
+.dropdown-menu::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
   height: 20px;
-  width: 200px;
-  background-color: rgba(204, 204, 204, 0.486);
+  width: 20px;
+  background:var(--secondary-bg);
+  transform: rotate(45deg);
+
+}
+
+.dropdown-menu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+h3{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  line-height: 1.2rem;
+}
+
+.dropdown-menu ul li{
+  padding: 10px 0;
+  border-top:1px solid rgba(0, 0, 0, 0.05);
+}
+.dropdown-menu ul li:hover text{
+  color: rgb(212, 33, 9);
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover img{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.DropdownItem{
+  display: flex;
+  margin: 10px auto;
+}
+
+.DropdownItem img{
+  opacity: 0.5;
+  transition:var(--speed);
+}
+
+.DropdownItem text{
+  max-width: 80px;
+  margin-left: 10px;
+  transition: var(--speed);
+}
+
+table, th,td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding:0px;
+  border-color: grey;
+  align-content: center;
+  padding: 10px;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 10px;
+  display: block;
+  margin: 100px ;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
 }
