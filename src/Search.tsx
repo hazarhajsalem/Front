@@ -2,7 +2,7 @@ import  {useState, useEffect} from "react";
 import axios from 'axios';
 function Search(){
     const[datas, setDatas] = useState([]);
-    const[searchTerm, setSearchTerm] = useState([]);
+    const[searchTerm, setSearchTerm] = useState('');
     const [modal, setModal] = useState(false);
     useEffect(  () =>  {
         try{
@@ -45,7 +45,10 @@ function Search(){
             <div className="search_results"> 
                 {datas.filter((val:any) => {
                     console.log("type of",typeof(searchTerm))
-                return val.titre.toLowerCase( ).includes(searchTerm);
+                 if( searchTerm !==''){
+                    
+                    return val.titre.toLowerCase( ).includes(searchTerm.toLowerCase());}
+
                     })
                     .map((val:any) => {
                     return <div className="search_result" key={val.isbn}>
