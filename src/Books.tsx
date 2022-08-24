@@ -5,6 +5,7 @@ import book from "./books.png";
 import logout from "./logout.png";
 import photo from "./userlogo.png";
 import {useNavigate} from "react-router-dom";
+import Search from './Search';
 
 export  function Books() {
     const[books, setBooks] = useState([])
@@ -120,6 +121,8 @@ const update = (elt:any) => {
       document.body.classList.remove('active-modal')
     }
 
+
+
     return(
       <div className="App">
           <div className="form">
@@ -204,8 +207,8 @@ const update = (elt:any) => {
               </tbody>                   
           </table>
            </div>
-
            <div className='container'>
+           <Search/>
             <div className='trigger' onClick={()=>{setOpen(!open)}}>
             <img src ={photo}  alt=""/> 
             </div>
