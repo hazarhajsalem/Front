@@ -217,7 +217,7 @@ body.active-modal {
 }
 
 .searchBar input{
- font-size: 1.2rem;
+ font-size: 1rem;
  padding:.5rem 1rem;
 }
 .search_results{
@@ -232,11 +232,13 @@ body.active-modal {
   max-width: 600px;
   min-width: 300px;
 }
-
+.modal-search
+{
+  font-size: 1.5rem;
+}
 .close-modal-search {
   position: absolute;
   top: 10px;
-  right: 10px;
   padding: 5px 7px;
 }
 
