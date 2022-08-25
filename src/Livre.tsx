@@ -24,7 +24,7 @@ const navbook =() =>
 
 const navlogout =() =>
 {
-    navigate("/Login");
+    navigate("/SearchLivre");
 }
 
 
