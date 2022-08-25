@@ -1,6 +1,7 @@
 import { Livre } from './Livre';
 import {Login} from './Login';
 import { Books } from './Books';
+import {SearchLivre} from './SearchLivre';
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,10 +20,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route  path="/" element={<Login/>}/>
-          <Route  path="/Livre" element={<Livre/>}/>
+          <Route path="/" element={<SearchLivre/>}/>
+          <Route path="/Livre" element={<Livre/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Books" element={<Books/>}/>
+          <Route path="/SearchLivre" element={<SearchLivre/>}/>
         </Routes>
       </Router>
       </>
