@@ -25,7 +25,7 @@ export  function Books() {
     
     const navlogout =() =>
     {
-        navigate("/Login");
+        navigate("/SearchLivre");
     }
     
 
