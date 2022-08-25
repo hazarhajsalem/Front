@@ -32,13 +32,14 @@ code {
     font-weight: bold;
     text-align:center;
 }
+
 .container{
   background-color: rgb(231, 231, 231);
   height: 100px;
   box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
   padding: 0 1rem;
- display: flex;
- justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 button{
   
@@ -220,20 +221,33 @@ body.active-modal {
  font-size: 1rem;
  padding:.5rem 1rem;
 }
+.modal-search, .search {
+  top:130px;
+  left:400px;
+  width: 600px;
+  height: 500px;
+  position: fixed;
+  
+}
+
+.search{
+  background-color: whitesmoke;
+}
 .search_results{
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
   background: whitesmoke;
-  padding: 14px 28px;
   border-radius: 3px;
-  max-width: 600px;
-  min-width: 300px;
+  width: 500px;
+
 }
 .modal-search
 {
+  position: absolute;
+ 
   font-size: 1.5rem;
 }
 .close-modal-search {
@@ -250,12 +264,49 @@ body.active-modal {
 }
 
 
-.search{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  top:110px;
-  background:whitesmoke;
+.textsearch
+{
+  position:absolute;
+  top:1;
+  right: 60px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trigger:hover p{
+  color: rgb(212, 33, 9);
+  cursor: pointer;
+}
+
+.trigger:hover img{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.searchLivre{
+  position: absolute;
+  right: 400px;
+  top:150px;
+}
+
+.searchLivre input{
+ font-size: 1rem;
+ padding:.5rem 1rem;
+ width:500px;
+}
+.result-livre{
+  position: absolute;
+  top: 200px;
+  left:500px;
+  width: 400px;
+  text-align: center;
+ 
+}
+.result-return{
+  background: #b0b0b0;
+  border:1px solid white;
+  color:#fff;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
 }
