@@ -47,7 +47,7 @@ export function SearchLivre(){
             <div className='container'>
             <div className='trigger' >             
              <img src ={photo} onClick={navlogin} alt=""/>  
-             <p className="textsearch">Login admin</p>
+             <p className="textsearch"  onClick={navlogin} >Login admin</p>
               </div>
               </div>
           </header>
